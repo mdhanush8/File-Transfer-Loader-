@@ -15,13 +15,12 @@
             background: #f0f2f5;
             font-family: 'Segoe UI', sans-serif;
         }
-        
         .loader-container {
             position: relative;
             height: 120px;
             width: 400px;
         }
-        
+
         .computer, .cloud {
             position: absolute;
             font-size: 36px;
@@ -32,16 +31,16 @@
             border-radius: 12px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .computer {
             left: 20px;
         }
-        
+
         .cloud {
             right: 20px;
             color: #3498db;
         }
-        
+
         .transfer-path {
             position: absolute;
             left: 80px;
@@ -52,25 +51,25 @@
             border-radius: 2px;
             overflow: hidden;
         }
-        
+
         .progress {
             position: absolute;
             height: 100%;
-            width: 30%;
+            width: 30px;
             background: linear-gradient(90deg, #3498db, #2ecc71);
             border-radius: 2px;
-            animation: progressMove 1.5s infinite ease-in-out;
+            animation: progressMove 1.7s infinite linear;
         }
-        
+
         .file {
             position: absolute;
             bottom: 35px;
             left: 80px;
             font-size: 18px;
             color: #2ecc71;
-            animation: fileMove 2s infinite ease-in-out;
+            animation: fileMove 2s infinite linear;
         }
-        
+
         @keyframes fileMove {
             0% { left: 80px; transform: scale(1) rotate(0deg); }
             25% { transform: scale(1.1) rotate(5deg); }
@@ -78,10 +77,11 @@
             75% { transform: scale(1.1) rotate(-5deg); }
             100% { left: 80px; transform: scale(1) rotate(0deg); }
         }
-        
+
         @keyframes progressMove {
-            0% { left: -30%; }
-            100% { left: 100%; }
+            0% { left: 0; }
+            50% { left: calc(100% - 30px); }
+            100% { left: 0; }
         }
     </style>
 </head>
