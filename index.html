@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Transfer Loader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #f0f2f5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        
+        .loader-container {
+            position: relative;
+            height: 120px;
+            width: 400px;
+        }
+        
+        .computer, .cloud {
+            position: absolute;
+            font-size: 36px;
+            bottom: 20px;
+            color: #3498db;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 12px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .computer {
+            left: 20px;
+        }
+        
+        .cloud {
+            right: 20px;
+            color: #3498db;
+        }
+        
+        .transfer-path {
+            position: absolute;
+            left: 80px;
+            right: 80px;
+            bottom: 45px;
+            height: 3px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .progress {
+            position: absolute;
+            height: 100%;
+            width: 30%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 2px;
+            animation: progressMove 1.5s infinite ease-in-out;
+        }
+        
+        .file {
+            position: absolute;
+            bottom: 35px;
+            left: 80px;
+            font-size: 18px;
+            color: #2ecc71;
+            animation: fileMove 2s infinite ease-in-out;
+        }
+        
+        @keyframes fileMove {
+            0% { left: 80px; transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.1) rotate(5deg); }
+            50% { left: calc(100% - 100px); transform: scale(1) rotate(0deg); }
+            75% { transform: scale(1.1) rotate(-5deg); }
+            100% { left: 80px; transform: scale(1) rotate(0deg); }
+        }
+        
+        @keyframes progressMove {
+            0% { left: -30%; }
+            100% { left: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="computer"><i class="fas fa-laptop"></i></div>
+        <div class="cloud"><i class="fas fa-cloud"></i></div>
+        <div class="transfer-path"><div class="progress"></div></div>
+        <div class="file"><i class="fas fa-file"></i></div>
+    </div>
+</body>
+</html>
